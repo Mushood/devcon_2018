@@ -1,0 +1,10 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
+    "/css/font-awesome.min.css": "/css/font-awesome.min.css",
+    "/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js",
+    "/js/clean-blog.min.js": "/js/clean-blog.min.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/jqBootstrapValidation.min.js": "/js/jqBootstrapValidation.min.js"
+}

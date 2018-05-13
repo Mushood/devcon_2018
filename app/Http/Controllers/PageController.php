@@ -25,4 +25,10 @@ class PageController extends Controller
         return view('contact');
     }
 
+    public function post()
+    {
+
+        return view('post');
+    }
+
 }

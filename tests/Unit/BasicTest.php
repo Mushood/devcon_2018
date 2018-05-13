@@ -16,4 +16,31 @@ class BasicTest extends TestCase
         $response->assertSee('Clean Blog');
         $response->assertSee('A Blog Theme by Start Bootstrap');
     }
+
+    public function testAboutPage()
+    {
+        $response = $this->get('/about');
+        $response->assertStatus(200);
+
+        $response->assertSee('About Me');
+        $response->assertSee('This is what I do.');
+    }
+
+    public function testContactPage()
+    {
+        $response = $this->get('/contact');
+        $response->assertStatus(200);
+
+        $response->assertSee('Contact Me');
+        $response->assertSee('Have questions? I have answers.');
+    }
+
+    public function testPostPage()
+    {
+        $response = $this->get('/post');
+        $response->assertStatus(200);
+
+        $response->assertSee('Man must explore, and this is exploration at its greatest');
+        $response->assertSee('Problems look mighty small from 150 miles up');
+    }
 }

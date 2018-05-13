@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class BasicTest extends TestCase
+class PageTest extends TestCase
 {
     public function testWelcomePage()
     {
@@ -42,5 +42,23 @@ class BasicTest extends TestCase
 
         $response->assertSee('Man must explore, and this is exploration at its greatest');
         $response->assertSee('Problems look mighty small from 150 miles up');
+    }
+
+    public function testLoginPage()
+    {
+        $response = $this->get('/login');
+        $response->assertStatus(200);
+
+        $response->assertSee('Login');
+        $response->assertSee('Access your profile.');
+    }
+
+    public function testRegisterPage()
+    {
+        $response = $this->get('/register');
+        $response->assertStatus(200);
+
+        $response->assertSee('Register');
+        $response->assertSee('Create your profile.');
     }
 }

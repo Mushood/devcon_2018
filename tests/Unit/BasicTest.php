@@ -13,6 +13,7 @@ class BasicTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200);
 
-        $response->assertSee('Laravel');
+        $response->assertSee('Clean Blog');
+        $response->assertSee('A Blog Theme by Start Bootstrap');
     }
 }

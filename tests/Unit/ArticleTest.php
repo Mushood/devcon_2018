@@ -95,7 +95,7 @@ class ArticleTest extends TestCase
         $response->assertSee('/login');
     }
 
-    public function testEditPageAccessibleIfLoggedIn()
+    public function testEditPageAccessibleIfAuthor()
     {
         $user = User::find(1);
 
@@ -106,7 +106,15 @@ class ArticleTest extends TestCase
         $response->assertSee('Edit your story');
     }
 
-    public function testUpdateFunction()
+    public function testCannotEditPageAccessibleIfNotAuthor()
+    {
+        $user = User::find(2);
+
+        $response = $this->actingAs($user)->get('/article/1/edit');
+        $response->assertStatus(403);
+    }
+
+    public function testUpdateFunctionIfAuthor()
     {
         $user = User::find(1);
 
@@ -134,5 +142,19 @@ class ArticleTest extends TestCase
             'body'              => "This is my new body",
             'image_name'        => "image2.jpg",
         ]);
+    }
+
+    public function testCannotUpdateFunctionIfNotAuthor()
+    {
+        $user = User::find(2);
+
+        $response = $this->actingAs($user)->put('/article/1', array(
+            '_token'            => csrf_token(),
+            'title'             => "This is my new title",
+            'body'              => "This is my new body",
+            'image'             => UploadedFile::fake()->image('image2.jpg'),
+        ));
+
+        $response->assertStatus(403);
     }
 }

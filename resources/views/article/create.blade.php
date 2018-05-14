@@ -21,7 +21,21 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>Tell us your story!</p>
-            <form name="articleMessage" id="createArticle" novalidate>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form name="articleMessage" id="createArticle"
+                  method="POST" action="{{ route('article.store') }}"
+                  enctype="multipart/form-data"
+                  novalidate>
+                {{ csrf_field() }}
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Title</label>

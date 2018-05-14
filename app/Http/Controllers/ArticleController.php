@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Events\ArticleCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -39,9 +40,11 @@ class ArticleController extends Controller
         //set article to user who created it
         $validatedData['user_id'] = Auth::user()->id;
 
-        Article::create($validatedData);
+        $article = Article::create($validatedData);
 
         $request->session()->flash('status', 'Article was created!');
+
+        event(new ArticleCreated($article));
 
         return redirect()->route('home');
     }

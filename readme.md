@@ -1,60 +1,41 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## About Dev 2018
+- Organized by Mauritius Software Craftsmanship Community (https://conference.mscc.mu).
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About This Project
 
-## About Laravel
+1. Installation: 02a23bfee3a35de54fba84cb87bcf564b8fe7b79
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+2. First Test: 3919c0d7b0d69689a8614efe9dbecf6fd4b5b6a7
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. Importing Style: 66cbd053fdb2d8ef56b65fef5b7a5949de5c4ed9
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+4. Other pages: 7b4d8448f096c87aa325d9bd15f6a8b8910346bf
 
-## Learning Laravel
+5. Auth Page: 2856b0e1814fbd3d190a319a5411cb728ec46cfe
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+6. Article Entity: 41b947ea50ba88e51a5c48a1628fc7ab1306fbcb
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+7. Create Page: 5b918d73773172f77edca5c1c762fce3340283a8
 
-## Laravel Sponsors
+8. Middleware: 582e2d8b5acd4fdaf18f6aef542ffa67c99c0245
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+9. Store Article: f2b5e9490e336641da13b2845cc16e310da5f930
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
+10. Index Article: af7f58a2371f5149bae21833cc1caf3314a580bd
 
-## Contributing
+11. Extracting to blade: 8083844e24ca73b6b5dab3e6d71da9a256c85d07
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+12. Show Page Article: 82073077af1c57a2a4d119f5716f88da69d17b36
 
-## Security Vulnerabilities
+13. Edit Page: 5eb80dec3cdb98d2d250ec389dd0c8ab54972d11
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+14. Correct Test error: c467aae06d6f7810e7e473affd0e8774594cd3b8
 
-## License
+15. Update Article: 9a0d99f3cc775027965f1463accc67dfd3b3ec41
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+16. Article Policy: df9353d113d535960548cf94a4d4c51a51a726e3
+
+17. Send Email: c8c8d0305319d5650f00fc369934582a69d202b6
+
+18. Queue Seeder: 78e6e8eb725c965d876e9720d8a9e275762ba72c
+

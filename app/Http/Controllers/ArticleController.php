@@ -57,4 +57,27 @@ class ArticleController extends Controller
 
         return view('article.create', compact('article'));
     }
+
+    public function update(Request $request, Article $article)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        //store file
+        $image = $request->file('image');
+        if($image){
+            $filename =  $image->getClientOriginalName();
+            Storage::disk('public')->putFileAs('articles', $image, $filename);
+            $validatedData['image_name'] = $filename;
+        }
+
+        $article->update($validatedData);
+
+        $request->session()->flash('status', 'Article was updated!');
+
+        return redirect()->route('home');
+    }
+
 }

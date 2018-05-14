@@ -17,3 +17,4 @@ Route::post('/article', 'ArticleController@store')->name('article.store')->middl
 Route::get('/articles', 'ArticleController@index')->name('article.index');
 Route::get('/article/{article}', 'ArticleController@show')->name('article.show');
 Route::get('/article/{article}/edit', 'ArticleController@edit')->name('article.edit')->middleware('auth');
+Route::put('/article/{article}', 'ArticleController@update')->name('article.update')->middleware('auth');

@@ -37,15 +37,19 @@
             @endif
 
             <form name="articleMessage" id="createArticle"
-                    method="POST"
+                  method="POST"
                     @isset($article)
-                        
+                        action="{{ route('article.update', ['article' => $article->id]) }}"
                     @else
-                        action="{{ route('article.update') }}"
+                        action="{{ route('article.store') }}"
                     @endisset
+
                   enctype="multipart/form-data"
                   novalidate>
                 {{ csrf_field() }}
+                @isset($article)
+                    {{ method_field('PUT') }}
+                @endisset
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Title</label>

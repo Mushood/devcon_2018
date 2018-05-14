@@ -105,4 +105,34 @@ class ArticleTest extends TestCase
         $response->assertSee('Edit article');
         $response->assertSee('Edit your story');
     }
+
+    public function testUpdateFunction()
+    {
+        $user = User::find(1);
+
+        Storage::fake('public');
+
+        $this->assertDatabaseMissing('articles', [
+            'title'             => "This is my new title",
+            'body'              => "This is my new body",
+            'image_name'        => "image2.jpg",
+        ]);
+
+        $response = $this->actingAs($user)->put('/article/1', array(
+            '_token'            => csrf_token(),
+            'title'             => "This is my new title",
+            'body'              => "This is my new body",
+            'image'             => UploadedFile::fake()->image('image2.jpg'),
+        ));
+
+        // Assert the file was stored
+        Storage::disk('public')->assertExists('/articles/image2.jpg');
+
+        // Assert the entity article was stored
+        $this->assertDatabaseHas('articles', [
+            'title'             => "This is my new title",
+            'body'              => "This is my new body",
+            'image_name'        => "image2.jpg",
+        ]);
+    }
 }

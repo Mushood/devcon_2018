@@ -45,4 +45,10 @@ class ArticleController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function show(Article $article)
+    {
+
+        return view('article.show', compact('article'));
+    }
 }

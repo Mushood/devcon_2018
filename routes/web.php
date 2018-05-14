@@ -15,3 +15,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/article/create', 'ArticleController@create')->name('article.create')->middleware('auth');
 Route::post('/article', 'ArticleController@store')->name('article.store')->middleware('auth');
 Route::get('/articles', 'ArticleController@index')->name('article.index');
+Route::get('/article/{article}', 'ArticleController@show')->name('article.show');

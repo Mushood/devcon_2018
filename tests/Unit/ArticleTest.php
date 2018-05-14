@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Article;
 use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -72,5 +73,17 @@ class ArticleTest extends TestCase
 
         $response->assertSee('Articles');
         $response->assertSee('Read our articles');
+    }
+
+    public function testArticlePage()
+    {
+        $article = Article::find(1);
+
+        $response = $this->get('/article/1');
+        $response->assertStatus(200);
+
+        $response->assertSee($article->title);
+        $response->assertSee($article->body);
+        $response->assertSee($article->image_name);
     }
 }

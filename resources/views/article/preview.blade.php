@@ -1,5 +1,5 @@
 <div class="post-preview">
-    <a href="post.html">
+    <a href="{{ route('article.show', ['article' => $article->id]) }}">
         <h2 class="post-title">
             {{ $article->title }}
         </h2>

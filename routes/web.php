@@ -12,4 +12,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/article/create', 'ArticleController@create')->name('article.create');
+Route::get('/article/create', 'ArticleController@create')->name('article.create')->middleware('auth');

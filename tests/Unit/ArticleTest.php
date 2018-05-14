@@ -86,4 +86,23 @@ class ArticleTest extends TestCase
         $response->assertSee($article->body);
         $response->assertSee($article->image_name);
     }
+
+    public function testEditNotAccessibleIfNotLoggedInPage()
+    {
+        $response = $this->get('/article/1/edit');
+        $response->assertStatus(302);
+
+        $response->assertSee('/login');
+    }
+
+    public function testEditPageAccessibleIfLoggedIn()
+    {
+        $user = User::find(1);
+
+        $response = $this->actingAs($user)->get('/article/1/edit');
+        $response->assertStatus(200);
+
+        $response->assertSee('Edit article');
+        $response->assertSee('Edit your story');
+    }
 }

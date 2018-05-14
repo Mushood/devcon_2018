@@ -51,4 +51,10 @@ class ArticleController extends Controller
 
         return view('article.show', compact('article'));
     }
+
+    public function edit(Article $article)
+    {
+
+        return view('article.create', compact('article'));
+    }
 }

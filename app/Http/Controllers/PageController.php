@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -9,8 +10,9 @@ class PageController extends Controller
 
     public function welcome()
     {
+        $articles = Article::latest()->with('user')->limit(3)->get();
 
-        return view('welcome');
+        return view('welcome', compact('articles'));
     }
 
     public function about()

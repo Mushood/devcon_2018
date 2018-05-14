@@ -28,7 +28,7 @@
                         </h2>
                     </a>
                     <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
+                        {{ $article->user->name }}
                         on {{ $article->created_at }}</p>
                 </div>
             @endforeach

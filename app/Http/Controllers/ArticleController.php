@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+    public function index()
+    {
+        $articles = Article::all();
+
+        return view('article.index', compact('articles'));
+    }
+
     public function create()
     {
 
@@ -23,6 +30,7 @@ class ArticleController extends Controller
             'image' => 'required',
         ]);
 
+        //store file
         $image = $request->file('image');
         $filename =  $image->getClientOriginalName();
         Storage::disk('public')->putFileAs('articles', $image, $filename);

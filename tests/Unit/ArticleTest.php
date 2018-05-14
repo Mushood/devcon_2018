@@ -64,4 +64,13 @@ class ArticleTest extends TestCase
             'image_name'        => "image.jpg",
         ]);
     }
+
+    public function testArticlesPage()
+    {
+        $response = $this->get('/articles');
+        $response->assertStatus(200);
+
+        $response->assertSee('Articles');
+        $response->assertSee('Read our articles');
+    }
 }

@@ -40,4 +40,28 @@ class ArticleTest extends TestCase
         $response->assertSee('Create an article');
         $response->assertSee('Reach your audience');
     }
+
+    public function testStoreFunction()
+    {
+        $user = User::find(1);
+
+        Storage::fake('public');
+
+        $response = $this->actingAs($user)->post('/article', array(
+            '_token'            => csrf_token(),
+            'title'             => "This is my title",
+            'body'              => "This is my body",
+            'image'             => UploadedFile::fake()->image('image.jpg'),
+        ));
+
+        // Assert the file was stored
+        Storage::disk('public')->assertExists('/articles/image.jpg');
+
+        // Assert the entity article was stored
+        $this->assertDatabaseHas('articles', [
+            'title'             => "This is my title",
+            'body'              => "This is my body",
+            'image_name'        => "image.jpg",
+        ]);
+    }
 }

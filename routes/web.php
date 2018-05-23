@@ -11,6 +11,7 @@ Route::get('/post', 'PageController@post')->name('post');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/file-upload', 'PageController@uploadFile')->name('upload');
 
 Route::get('/article/create', 'ArticleController@create')->name('article.create')->middleware('auth');
 Route::post('/article', 'ArticleController@store')->name('article.store')->middleware('auth');

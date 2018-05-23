@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Clean Blog - Start Bootstrap Theme</title>
 
@@ -21,6 +22,15 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ asset('js/clean-blog.min.js') }}"></script>
+
+    <script src="{{ asset('js/dropzone.js') }}"></script>
+
 </head>
 
 <body>
@@ -31,12 +41,7 @@
 
 @include('layout.footer')
 
-<!-- Bootstrap core JavaScript -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- Custom scripts for this template -->
-<script src="{{ asset('js/clean-blog.min.js') }}"></script>
 
 </body>
 

@@ -25,7 +25,37 @@
                 @endforeach
             </div>
         </div>
+
+        <div class="row">
+            <form action="/file-upload"
+                  class="dropzone"
+                  id="my-awesome-dropzone"></form>
+        </div>
     </div>
 
     <hr />
+
+    <script>
+        var myDropzone = new Dropzone("#my-awesome-dropzone", {
+            // Setup chunking
+            chunking: true,
+            method: "POST",
+            maxFilesize: 400000000,
+            chunkSize: 1000000,
+            // If true, the individual chunks of a file are being uploaded simultaneously.
+            parallelChunkUploads: false
+        });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        // Append token to the request - required for web routes
+        myDropzone.on('sending', function (file, xhr, formData) {
+            formData.append( '_token', $('meta[name="csrf-token"]').attr('content'));
+        })
+
+    </script>
 @endsection
